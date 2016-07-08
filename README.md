@@ -1,32 +1,28 @@
-# basic
+# minicss
 
-Minify javascript files with UglifyJS
+Minify css files with minicss
 
->npm install grunt-contrib-uglify --save-dev
+>npm install grunt-contrib-cssmin --save-dev
 
 <pre><code>
 
-module.exports = function(grunt) {
-
-  // Project configuration.
-  grunt.initConfig({
-
-    uglify: {
-    my_target: {
-      files: {
-        'dest/output.js': ['src/*.js']
-      }
+grunt.initConfig({
+    cssmin: {
+        target: {
+            files: {
+                'minicss.css': ['foo.css', 'bar.css']
+            }
+        }
     }
-  }
-  });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+});
 
-};
+// Load the plugin that provides the "uglify" task.
+grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+// Default task(s).
+grunt.registerTask('default', ['cssmin']);
 
 
 
